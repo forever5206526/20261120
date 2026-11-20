@@ -1,0 +1,158 @@
+{
+  "checked_at": "2026-11-20",
+  "method": "Python read-only PE and byte-signature scan; no EXE execution or modification",
+  "input": {
+    "filename": "2026-01-07_Ragexe_1767686776_VHL_clientinfo_fixed.exe",
+    "size_bytes": 16499200,
+    "sha256": "0a4fbf90f6711cea8f7df1bdf69c30dd85516e5bc14e5a7478443a1b3d6d8d4d",
+    "pe_format": "PE32",
+    "machine": "0x014C",
+    "architecture": "Intel i386 / 32-bit",
+    "pe_timestamp_utc": "2026-01-06T06:52:14Z",
+    "linker_version": "14.29",
+    "sections": [
+      ".text",
+      ".rdata",
+      ".data",
+      ".rsrc",
+      ".edata",
+      ".idata",
+      ".tls",
+      ".SCY",
+      ".VHL"
+    ]
+  },
+  "signatures": {
+    "UseOldLogin_2026_gate": {
+      "count": 1,
+      "offsets": [
+        "0x991FAB"
+      ]
+    },
+    "UseOldLogin_2026_modern_packet_builder": {
+      "count": 1,
+      "offsets": [
+        "0x990AD8"
+      ]
+    },
+    "NoLoginOTP": {
+      "count": 1,
+      "offsets": [
+        "0x4BCBBF"
+      ]
+    },
+    "GoldPC_PUSH_300": {
+      "count": 1,
+      "offsets": [
+        "0x54A53B"
+      ]
+    },
+    "GoldPC_CMP_EDI_primary": {
+      "count": 0,
+      "offsets": []
+    },
+    "GoldPC_CMP_EDI_fallback": {
+      "count": 1,
+      "offsets": [
+        "0x54B893"
+      ]
+    },
+    "GoldPC_CMP_ESI_primary": {
+      "count": 0,
+      "offsets": []
+    },
+    "GoldPC_CMP_ESI_fallback": {
+      "count": 1,
+      "offsets": [
+        "0x54D419"
+      ]
+    }
+  },
+  "TranslateClient_candidates": {
+    "Deletion_Time_Part_2": {
+      "count": 1,
+      "offsets": [
+        "0xD9DBE7"
+      ]
+    },
+    "Message_Box": {
+      "count": 1,
+      "offsets": [
+        "0xCDBA5F"
+      ]
+    },
+    "Total_in_Cash_Shop": {
+      "count": 1,
+      "offsets": [
+        "0xD3FE73"
+      ]
+    },
+    "Pet_Evolution_Item_Amount": {
+      "count": 1,
+      "offsets": [
+        "0xD41A3F"
+      ]
+    },
+    "Tip_Box_Part_2": {
+      "count": 1,
+      "offsets": [
+        "0xD33CD3"
+      ]
+    },
+    "Equipment_Dismount_Cart": {
+      "count": 1,
+      "offsets": [
+        "0xD382CB"
+      ]
+    },
+    "No_Color": {
+      "count": 1,
+      "offsets": [
+        "0xD293EF"
+      ]
+    },
+    "Rune_Tablet_Rune_List": {
+      "count": 1,
+      "offsets": [
+        "0xD2713F"
+      ]
+    }
+  },
+  "RestoreCpsDll": {
+    "anchor_count": 1,
+    "anchor_file_offset": "0xD14700",
+    "anchor_va": "0x1115D00",
+    "push_pointer_offsets": [
+      "0x34B029"
+    ],
+    "preceding_e8_opcode_candidates": [
+      "0x34B00A"
+    ]
+  },
+  "sessions": {
+    "files": [
+      "rAthena_Session.yml",
+      "rAthena_Session_SSOMode.yml"
+    ],
+    "yaml_parse": "success",
+    "patch_count_each": 54,
+    "shared_patch_count": 53,
+    "only_old_login": [
+      "UseOldLogin"
+    ],
+    "only_sso_login": [
+      "UseSSOLogin"
+    ],
+    "gold_pc_max_points_each": 900,
+    "source_path_each": "C:/Users/Victor/Desktop/20260107/2026-01-07_Ragexe_1767686776_VHL_v4_clientinfo.exe"
+  },
+  "validation": {
+    "checker_python_syntax": "passed",
+    "checker_execution": "passed",
+    "session_yaml_parse": "passed",
+    "original_exe_modified": false,
+    "warp_runtime_test": false,
+    "game_launch_test": false,
+    "login_test": false
+  }
+}
