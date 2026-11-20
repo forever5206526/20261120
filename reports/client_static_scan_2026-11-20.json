@@ -20,7 +20,16 @@
       ".tls",
       ".SCY",
       ".VHL"
-    ]
+    ],
+    "resource_root_type_ids": [
+      3,
+      5,
+      9,
+      14,
+      24
+    ],
+    "standard_rt_version_resource_present": false,
+    "manifest_resource_present": true
   },
   "signatures": {
     "UseOldLogin_2026_gate": {
