@@ -72,6 +72,58 @@ def offset_to_va(pe: dict, offset: int) -> int | None:
     return None
 
 
+def rva_to_offset(pe: dict, rva: int) -> int | None:
+    for sec in pe["sections"]:
+        span = max(sec["virtual_size"], sec["raw_size"])
+        if sec["rva"] <= rva < sec["rva"] + span:
+            offset = sec["raw_ptr"] + rva - sec["rva"]
+            return offset if offset < sec["raw_ptr"] + sec["raw_size"] else None
+    return None
+
+
+def parse_imports(data: bytes, pe: dict) -> dict[str, list[str]]:
+    # Import directory is data-directory entry 1.
+    peoff = struct.unpack_from("<I", data, 0x3C)[0]
+    opt = peoff + 24
+    directory_offset = opt + (96 if pe["magic"] == 0x10B else 112)
+    import_rva, _ = struct.unpack_from("<II", data, directory_offset + 8)
+    descriptor = rva_to_offset(pe, import_rva) if import_rva else None
+    result: dict[str, list[str]] = {}
+    if descriptor is None:
+        return result
+
+    thunk_size = 4 if pe["magic"] == 0x10B else 8
+    ordinal_mask = 0x80000000 if thunk_size == 4 else 0x8000000000000000
+    while descriptor + 20 <= len(data):
+        oft, _, _, name_rva, first_thunk = struct.unpack_from("<IIIII", data, descriptor)
+        if not any((oft, name_rva, first_thunk)):
+            break
+        name_off = rva_to_offset(pe, name_rva)
+        if name_off is None:
+            descriptor += 20
+            continue
+        name_end = data.find(b"\\0", name_off)
+        dll_name = data[name_off:name_end].decode("ascii", "replace").lower()
+        names = result.setdefault(dll_name, [])
+        thunk_rva = oft or first_thunk
+        thunk_off = rva_to_offset(pe, thunk_rva)
+        if thunk_off is not None:
+            index = 0
+            while thunk_off + (index + 1) * thunk_size <= len(data):
+                value = int.from_bytes(data[thunk_off + index * thunk_size:
+                                            thunk_off + (index + 1) * thunk_size], "little")
+                if value == 0:
+                    break
+                if not (value & ordinal_mask):
+                    import_name_off = rva_to_offset(pe, value)
+                    if import_name_off is not None and import_name_off + 2 < len(data):
+                        end = data.find(b"\\0", import_name_off + 2)
+                        names.append(data[import_name_off + 2:end].decode("ascii", "replace"))
+                index += 1
+        descriptor += 20
+    return result
+
+
 def hits(data: bytes, pattern: str) -> dict:
     found = find_pattern(data, pattern)
     return {"count": len(found), "offsets": [f"0x{x:X}" for x in found]}
@@ -140,7 +192,7 @@ def main() -> int:
     checks["RestoreCpsDll_anchor"] = cps
 
     import_names = ("GetModuleHandleA", "GetProcAddress", "OutputDebugStringA",
-                    "CreateWindowExA", "MessageBoxA", "wsprintfA")
+                    "CreateWindowExA", "MessageBoxA", "wsprintfA", "_setmbcp")
     report = {
         "input_filename": args.exe.name,
         "size_bytes": len(data),
@@ -156,6 +208,10 @@ def main() -> int:
         },
         "import_name_strings_present_in_file": {
             name: name.encode("ascii") in data for name in import_names
+        },
+        "parsed_imports": {
+            dll: sorted(set(names)) for dll, names in parse_imports(data, pe).items()
+            if dll == "ucrtbase.dll"
         },
         "static_signature_checks": checks,
         "limitations": [
