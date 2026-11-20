@@ -44,6 +44,7 @@
 - [WARP 來源盤點](docs/來源盤點.md)
 - [使用者已提供檔案分析](docs/已提供檔案分析.md)
 - [WARP 靜態補丁相容性檢查](docs/靜態補丁相容性檢查.md)
+- [Session 補丁清單核對](docs/Session補丁清單核對.md)
 - [繁體中文硬編碼字串翻譯初稿](docs/繁體中文硬編碼字串初稿.md)
 - [CP950 碼頁與字型相容性](docs/繁體中文CP950與字型相容性.md)
 - [CP950 翻譯映射](localization/Translations_zhTW.yml)
