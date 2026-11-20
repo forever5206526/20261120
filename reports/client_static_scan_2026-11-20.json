@@ -169,7 +169,10 @@
     "cp950_replacements_fit_existing_zero_padding": true,
     "translation_map_python_yaml_parse": "passed",
     "translation_map_validator_exit_code": 0,
-    "translation_map_cp950_roundtrip_all_entries": true
+    "translation_map_cp950_roundtrip_all_entries": true,
+    "checker_full_execution_before_cp950_extension": "passed",
+    "checker_reexecuted_after_cp950_extension": false,
+    "custom_code_page_preflight_independent_python_run": "passed"
   },
   "imports": {
     "ucrtbase.dll": [
