@@ -94,6 +94,7 @@ def main() -> int:
             "required_bytes_including_terminator": required,
             "fits_without_overwriting_nonzero_data": required <= capacity,
             "placeholders_preserved": sorted(source_placeholders) == sorted(replacement_placeholders),
+            "cp950_roundtrip": cp950_roundtrip,
         })
 
     result = {
