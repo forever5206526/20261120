@@ -102,7 +102,7 @@ def parse_imports(data: bytes, pe: dict) -> dict[str, list[str]]:
         if name_off is None:
             descriptor += 20
             continue
-        name_end = data.find(b"\\0", name_off)
+        name_end = data.find(b"\0", name_off)
         dll_name = data[name_off:name_end].decode("ascii", "replace").lower()
         names = result.setdefault(dll_name, [])
         thunk_rva = oft or first_thunk
@@ -117,7 +117,7 @@ def parse_imports(data: bytes, pe: dict) -> dict[str, list[str]]:
                 if not (value & ordinal_mask):
                     import_name_off = rva_to_offset(pe, value)
                     if import_name_off is not None and import_name_off + 2 < len(data):
-                        end = data.find(b"\\0", import_name_off + 2)
+                        end = data.find(b"\0", import_name_off + 2)
                         names.append(data[import_name_off + 2:end].decode("ascii", "replace"))
                 index += 1
         descriptor += 20
