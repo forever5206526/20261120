@@ -19,7 +19,8 @@
       "available_capacity_bytes": 32,
       "required_bytes_including_terminator": 23,
       "fits_without_overwriting_nonzero_data": true,
-      "placeholders_preserved": true
+      "placeholders_preserved": true,
+      "cp950_roundtrip": true
     },
     {
       "desc": "Message Box [zh-TW CP950]",
@@ -31,7 +32,8 @@
       "available_capacity_bytes": 8,
       "required_bytes_including_terminator": 5,
       "fits_without_overwriting_nonzero_data": true,
-      "placeholders_preserved": true
+      "placeholders_preserved": true,
+      "cp950_roundtrip": true
     },
     {
       "desc": "Total in Cash Shop [zh-TW CP950; shortened to fit]",
@@ -43,7 +45,8 @@
       "available_capacity_bytes": 16,
       "required_bytes_including_terminator": 14,
       "fits_without_overwriting_nonzero_data": true,
-      "placeholders_preserved": true
+      "placeholders_preserved": true,
+      "cp950_roundtrip": true
     },
     {
       "desc": "Pet Evolution item amount [zh-TW CP950]",
@@ -55,7 +58,8 @@
       "available_capacity_bytes": 14,
       "required_bytes_including_terminator": 5,
       "fits_without_overwriting_nonzero_data": true,
-      "placeholders_preserved": true
+      "placeholders_preserved": true,
+      "cp950_roundtrip": true
     },
     {
       "desc": "Tip box - Part 2 [zh-TW CP950]",
@@ -67,7 +71,8 @@
       "available_capacity_bytes": 8,
       "required_bytes_including_terminator": 5,
       "fits_without_overwriting_nonzero_data": true,
-      "placeholders_preserved": true
+      "placeholders_preserved": true,
+      "cp950_roundtrip": true
     },
     {
       "desc": "Equipment - Dismount Cart [zh-TW CP950]",
@@ -79,7 +84,8 @@
       "available_capacity_bytes": 12,
       "required_bytes_including_terminator": 11,
       "fits_without_overwriting_nonzero_data": true,
-      "placeholders_preserved": true
+      "placeholders_preserved": true,
+      "cp950_roundtrip": true
     },
     {
       "desc": "No Color [zh-TW CP950]",
@@ -91,7 +97,8 @@
       "available_capacity_bytes": 12,
       "required_bytes_including_terminator": 5,
       "fits_without_overwriting_nonzero_data": true,
-      "placeholders_preserved": true
+      "placeholders_preserved": true,
+      "cp950_roundtrip": true
     },
     {
       "desc": "Rune Tablet - Rune List [zh-TW CP950]",
@@ -103,7 +110,8 @@
       "available_capacity_bytes": 16,
       "required_bytes_including_terminator": 9,
       "fits_without_overwriting_nonzero_data": true,
-      "placeholders_preserved": true
+      "placeholders_preserved": true,
+      "cp950_roundtrip": true
     }
   ],
   "patched_exe_created": false,
@@ -112,5 +120,13 @@
     "Static byte search only; WARP TranslateClient was not run.",
     "WARP's parsed Exe.BuildDate gate for CustomCodePage remains unverified.",
     "Successful rendering still requires a compatible font and Windows runtime test."
-  ]
+  ],
+  "validation_tool": {
+    "path": "tools/validate_zhTW_translations.py",
+    "python_syntax": "passed",
+    "executed_against_original_exe": "passed",
+    "exit_code": 0,
+    "yaml_1_2_json_compatibility_parse": "passed with PyYAML safe_load",
+    "patched_exe_created": false
+  }
 }
