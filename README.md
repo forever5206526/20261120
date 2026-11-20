@@ -42,6 +42,7 @@
 - [WARP 靜態補丁相容性檢查](docs/靜態補丁相容性檢查.md)
 - [繁體中文硬編碼字串翻譯初稿](docs/繁體中文硬編碼字串初稿.md)
 - [唯讀簽章檢查工具](tools/verify_client_signatures.py)
+- [靜態掃描 JSON 結果](reports/client_static_scan_2026-11-20.json)
 
 ## 工作分支
 
