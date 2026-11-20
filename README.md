@@ -26,10 +26,13 @@
 - [x] 收到客戶端 EXE 並記錄 PE32 架構及 SHA-256
 - [x] 收到兩份 WARP Session 並確認登入模式差異
 - [x] 完成選定 WARP 補丁簽章的唯讀掃描
+- [x] 建立 CP950 繁體中文 8 項候選映射並驗證容量與格式參數
+- [x] 確認 CustomCodePage 的 EXE 靜態前置簽章符合 WARP 腳本預期
 - [x] 建立可重跑的唯讀簽章檢查工具
 - [ ] 取得完整客戶端資料夾、GRF 與相依 DLL
 - [ ] 取得登入器並確認啟動流程
-- [ ] 確認客戶端編碼、字型與資源格式
+- [ ] 由 WARP 讀取 Exe.BuildDate，確認 CustomCodePage 的版本條件
+- [ ] 確認實際字型、中文字形與完整客戶端資源
 - [ ] 建立繁體中文翻譯檔及術語表
 - [ ] 在 Windows 執行 WARP 補丁並產生候選 EXE
 - [ ] 實際啟動、顯示、登入及相容性測試
@@ -41,6 +44,10 @@
 - [使用者已提供檔案分析](docs/已提供檔案分析.md)
 - [WARP 靜態補丁相容性檢查](docs/靜態補丁相容性檢查.md)
 - [繁體中文硬編碼字串翻譯初稿](docs/繁體中文硬編碼字串初稿.md)
+- [CP950 碼頁與字型相容性](docs/繁體中文CP950與字型相容性.md)
+- [CP950 翻譯映射](localization/Translations_zhTW.yml)
+- [CP950 翻譯唯讀驗證工具](tools/validate_zhTW_translations.py)
+- [CP950 翻譯驗證報告](reports/zhTW_translation_validation_2026-11-20.json)
 - [唯讀簽章檢查工具](tools/verify_client_signatures.py)
 - [靜態掃描 JSON 結果](reports/client_static_scan_2026-11-20.json)
 
