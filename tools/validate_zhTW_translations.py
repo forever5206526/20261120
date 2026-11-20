@@ -51,6 +51,14 @@ def main() -> int:
             continue
         if b"\0" in replace:
             errors.append(f"{desc}: replacement payload must not include NUL; WARP appends it")
+        try:
+            decoded_replacement = replace.decode("cp950")
+            cp950_roundtrip = decoded_replacement.encode("cp950") == replace
+        except UnicodeDecodeError:
+            cp950_roundtrip = False
+            errors.append(f"{desc}: replacement bytes are not valid CP950")
+        if not cp950_roundtrip:
+            errors.append(f"{desc}: CP950 encode/decode round-trip failed")
         pattern = b"\0" + find + b"\0"
         offsets = []
         pos = 0
