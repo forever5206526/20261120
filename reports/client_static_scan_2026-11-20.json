@@ -166,7 +166,10 @@
     "translation_map_created": true,
     "translation_map_validated_read_only": true,
     "translation_entries": 8,
-    "cp950_replacements_fit_existing_zero_padding": true
+    "cp950_replacements_fit_existing_zero_padding": true,
+    "translation_map_python_yaml_parse": "passed",
+    "translation_map_validator_exit_code": 0,
+    "translation_map_cp950_roundtrip_all_entries": true
   },
   "imports": {
     "ucrtbase.dll": [
@@ -251,5 +254,19 @@
     "static_preconditions_pass": true,
     "script_builddate_gate": "Exe.BuildDate >= 20250716; WARP's parsed BuildDate has not yet been read."
   },
-  "TranslateClient_candidate_offsets_note": "Each offset is the leading-NUL match offset; actual replacement starts at offset + 1."
+  "TranslateClient_candidate_offsets_note": "Each offset is the leading-NUL match offset; actual replacement starts at offset + 1.",
+  "session_patch_catalog": {
+    "warp_repository": "zVictorHG/WARP2026-Project",
+    "warp_main_commit": "57a3e7ba7af8c848ac765fc3b40be376425198fd",
+    "current_patch_category_key_count": 294,
+    "session_patch_count_each": 54,
+    "exact_registered_session_patch_count": 53,
+    "unregistered_session_patch_names": [
+      "RestoreBattlegroundUI"
+    ],
+    "unregistered_patch_script_file_present": true,
+    "unregistered_patch_category_yaml_entry": false,
+    "unregistered_patch_legacy_table_entry": false,
+    "interpretation": "Script exists but current category metadata does not register it; WARP TestBench must confirm whether the Session can still resolve it."
+  }
 }
