@@ -7,8 +7,9 @@
 - WARP 工具專案：[zVictorHG/WARP2026-Project](https://github.com/zVictorHG/WARP2026-Project)
 - 客戶端 EXE：使用者已提供，已完成 PE32 靜態檢查及部分 WARP 簽章相容性掃描；二進位檔未公開提交、未修改。
 - WARP Session：已收到舊式登入及 SSO 兩種設定並完成差異比對。
+- GRF 工具：已收到 GRF Editor v1.9.1.7 與內附 GrfCL，完成唯讀靜態盤點；尚未進行 Windows 執行及 CP950 實測。
 - 登入器：使用者後續提供，收到後再進行相容性分析與整合。
-- 完整客戶端資料夾／GRF／DLL：仍待提供。
+- 完整客戶端資料夾／正式 GRF／DLL：仍待提供。
 
 ## 工作原則
 
@@ -29,11 +30,13 @@
 - [x] 建立 CP950 繁體中文 8 項候選映射並驗證容量與格式參數
 - [x] 確認 CustomCodePage 的 EXE 靜態前置簽章符合 WARP 腳本預期
 - [x] 建立可重跑的唯讀簽章檢查工具
-- [ ] 取得完整客戶端資料夾、GRF 與相依 DLL
+- [x] 收到 GRF Editor v1.9.1.7 並完成內附 GrfCL 文件與範例盤點
+- [ ] 取得完整客戶端資料夾、正式 GRF 與相依 DLL
 - [ ] 取得登入器並確認啟動流程
 - [ ] 由 WARP 讀取 Exe.BuildDate，確認 CustomCodePage 的版本條件
 - [ ] 確認實際字型、中文字形與完整客戶端資源
-- [x] 建立第一批 8 項 CP950 繁體中文候選映射
+- [ ] 在 Windows 測試 GRF Editor／GrfCL 的列檔、抽取及重新封裝
+- [ ] 驗證 GRF 工具對 CP950 繁體中文檔名及路徑的處理
 - [ ] 擴充完整繁體中文翻譯資料庫及台灣術語表
 - [ ] 在 Windows 執行 WARP 補丁並產生候選 EXE
 - [ ] 實際啟動、顯示、登入及相容性測試
@@ -47,6 +50,7 @@
 - [Session 補丁清單核對](docs/Session補丁清單核對.md)
 - [繁體中文硬編碼字串翻譯初稿](docs/繁體中文硬編碼字串初稿.md)
 - [CP950 碼頁與字型相容性](docs/繁體中文CP950與字型相容性.md)
+- [GRF Editor v1.9.1.7 工具檢查](docs/GRF-Editor-工具檢查.md)
 - [CP950 翻譯映射](localization/Translations_zhTW.yml)
 - [CP950 翻譯唯讀驗證工具](tools/validate_zhTW_translations.py)
 - [CP950 翻譯驗證報告](reports/zhTW_translation_validation_2026-11-20.json)
