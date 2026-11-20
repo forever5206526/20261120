@@ -1,0 +1,116 @@
+{
+  "checked_at": "2026-11-20",
+  "input_exe": "2026-01-07_Ragexe_1767686776_VHL_clientinfo_fixed.exe",
+  "input_sha256": "0a4fbf90f6711cea8f7df1bdf69c30dd85516e5bc14e5a7478443a1b3d6d8d4d",
+  "mapping": "localization/Translations_zhTW.yml",
+  "mapping_encoding": "UTF-8 JSON syntax / YAML 1.2",
+  "replacement_encoding": "Windows-950 / CP950",
+  "entry_count": 8,
+  "validated_entry_count": 8,
+  "errors": [],
+  "entries": [
+    {
+      "desc": "Deletion Time - Part 2 [zh-TW CP950]",
+      "match_offset_including_leading_nul": "0xD9DBE7",
+      "text_start_offset": "0xD9DBE8",
+      "source_find_bytes": 30,
+      "replacement_cp950_bytes": 22,
+      "zero_padding_after_find": 2,
+      "available_capacity_bytes": 32,
+      "required_bytes_including_terminator": 23,
+      "fits_without_overwriting_nonzero_data": true,
+      "placeholders_preserved": true
+    },
+    {
+      "desc": "Message Box [zh-TW CP950]",
+      "match_offset_including_leading_nul": "0xCDBA5F",
+      "text_start_offset": "0xCDBA60",
+      "source_find_bytes": 7,
+      "replacement_cp950_bytes": 4,
+      "zero_padding_after_find": 1,
+      "available_capacity_bytes": 8,
+      "required_bytes_including_terminator": 5,
+      "fits_without_overwriting_nonzero_data": true,
+      "placeholders_preserved": true
+    },
+    {
+      "desc": "Total in Cash Shop [zh-TW CP950; shortened to fit]",
+      "match_offset_including_leading_nul": "0xD3FE73",
+      "text_start_offset": "0xD3FE74",
+      "source_find_bytes": 15,
+      "replacement_cp950_bytes": 13,
+      "zero_padding_after_find": 1,
+      "available_capacity_bytes": 16,
+      "required_bytes_including_terminator": 14,
+      "fits_without_overwriting_nonzero_data": true,
+      "placeholders_preserved": true
+    },
+    {
+      "desc": "Pet Evolution item amount [zh-TW CP950]",
+      "match_offset_including_leading_nul": "0xD41A3F",
+      "text_start_offset": "0xD41A40",
+      "source_find_bytes": 5,
+      "replacement_cp950_bytes": 4,
+      "zero_padding_after_find": 9,
+      "available_capacity_bytes": 14,
+      "required_bytes_including_terminator": 5,
+      "fits_without_overwriting_nonzero_data": true,
+      "placeholders_preserved": true
+    },
+    {
+      "desc": "Tip box - Part 2 [zh-TW CP950]",
+      "match_offset_including_leading_nul": "0xD33CD3",
+      "text_start_offset": "0xD33CD4",
+      "source_find_bytes": 4,
+      "replacement_cp950_bytes": 4,
+      "zero_padding_after_find": 4,
+      "available_capacity_bytes": 8,
+      "required_bytes_including_terminator": 5,
+      "fits_without_overwriting_nonzero_data": true,
+      "placeholders_preserved": true
+    },
+    {
+      "desc": "Equipment - Dismount Cart [zh-TW CP950]",
+      "match_offset_including_leading_nul": "0xD382CB",
+      "text_start_offset": "0xD382CC",
+      "source_find_bytes": 9,
+      "replacement_cp950_bytes": 10,
+      "zero_padding_after_find": 3,
+      "available_capacity_bytes": 12,
+      "required_bytes_including_terminator": 11,
+      "fits_without_overwriting_nonzero_data": true,
+      "placeholders_preserved": true
+    },
+    {
+      "desc": "No Color [zh-TW CP950]",
+      "match_offset_including_leading_nul": "0xD293EF",
+      "text_start_offset": "0xD293F0",
+      "source_find_bytes": 8,
+      "replacement_cp950_bytes": 4,
+      "zero_padding_after_find": 4,
+      "available_capacity_bytes": 12,
+      "required_bytes_including_terminator": 5,
+      "fits_without_overwriting_nonzero_data": true,
+      "placeholders_preserved": true
+    },
+    {
+      "desc": "Rune Tablet - Rune List [zh-TW CP950]",
+      "match_offset_including_leading_nul": "0xD2713F",
+      "text_start_offset": "0xD27140",
+      "source_find_bytes": 12,
+      "replacement_cp950_bytes": 8,
+      "zero_padding_after_find": 4,
+      "available_capacity_bytes": 16,
+      "required_bytes_including_terminator": 9,
+      "fits_without_overwriting_nonzero_data": true,
+      "placeholders_preserved": true
+    }
+  ],
+  "patched_exe_created": false,
+  "warp_executed": false,
+  "limitations": [
+    "Static byte search only; WARP TranslateClient was not run.",
+    "WARP's parsed Exe.BuildDate gate for CustomCodePage remains unverified.",
+    "Successful rendering still requires a compatible font and Windows runtime test."
+  ]
+}
