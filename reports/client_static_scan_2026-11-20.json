@@ -162,6 +162,94 @@
     "original_exe_modified": false,
     "warp_runtime_test": false,
     "game_launch_test": false,
-    "login_test": false
-  }
+    "login_test": false,
+    "translation_map_created": true,
+    "translation_map_validated_read_only": true,
+    "translation_entries": 8,
+    "cp950_replacements_fit_existing_zero_padding": true
+  },
+  "imports": {
+    "ucrtbase.dll": [
+      "_setmbcp"
+    ],
+    "gdi32.dll": [
+      "CreateFontA",
+      "CreateFontIndirectA"
+    ],
+    "note": "Import table parsed from PE32 descriptors; stronger than raw string-presence checks."
+  },
+  "custom_code_page_preflight": {
+    "setmbcp_949_call": {
+      "count": 1,
+      "offsets": [
+        "0x50A24C"
+      ]
+    },
+    "charset_mapper": {
+      "count": 1,
+      "offsets": [
+        "0x6CB9C0"
+      ]
+    },
+    "langtype_switch_anchor": {
+      "count": 1,
+      "offsets": [
+        "0x6CF821"
+      ]
+    },
+    "ucrtbase_setmbcp_import_present": true,
+    "candidate_codepage": 950,
+    "global_codepage_pointer_va": "0x016CD398",
+    "second_case_uses_same_global": true,
+    "global_assignment_count": 13,
+    "global_assignment_offsets": [
+      "0x6CF828",
+      "0x6CF83E",
+      "0x6CF859",
+      "0x6CF874",
+      "0x6CF88F",
+      "0x6CF8A7",
+      "0x6CF8C4",
+      "0x6CF8E1",
+      "0x6CF8FE",
+      "0x6CF91B",
+      "0x6CF938",
+      "0x6CF958",
+      "0x6CFA11"
+    ],
+    "original_assignment_values": [
+      949,
+      932,
+      936,
+      950,
+      874,
+      0,
+      0,
+      1252,
+      1251,
+      1258,
+      1145,
+      1256,
+      0
+    ],
+    "expected_original_values": [
+      949,
+      932,
+      936,
+      950,
+      874,
+      0,
+      0,
+      1252,
+      1251,
+      1258,
+      1145,
+      1256,
+      0
+    ],
+    "original_values_match": true,
+    "static_preconditions_pass": true,
+    "script_builddate_gate": "Exe.BuildDate >= 20250716; WARP's parsed BuildDate has not yet been read."
+  },
+  "TranslateClient_candidate_offsets_note": "Each offset is the leading-NUL match offset; actual replacement starts at offset + 1."
 }
