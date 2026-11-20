@@ -40,6 +40,7 @@
 - [WARP 來源盤點](docs/來源盤點.md)
 - [使用者已提供檔案分析](docs/已提供檔案分析.md)
 - [WARP 靜態補丁相容性檢查](docs/靜態補丁相容性檢查.md)
+- [繁體中文硬編碼字串翻譯初稿](docs/繁體中文硬編碼字串初稿.md)
 - [唯讀簽章檢查工具](tools/verify_client_signatures.py)
 
 ## 工作分支
