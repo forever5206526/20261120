@@ -1,0 +1,50 @@
+[
+  {
+    "desc": "Deletion Time - Part 2 [zh-TW CP950]",
+    "find": "<25 64 B3 E2 20 25 64 BF F9 20 25 64 C0 CF 20 25 64 BD C3 20 25 64 BA D0 20 25 64 C3 CA 20>",
+    "replace": "<25 64 A6 7E 25 64 A4 EB 25 64 A4 E9 20 25 64 3A 25 64 3A 25 64 21>",
+    "startDate": 20110718,
+    "startDateRE": 20100817
+  },
+  {
+    "desc": "Message Box [zh-TW CP950]",
+    "find": "<B8 DE BD C3 C1 F6 00>",
+    "replace": "<B0 54 AE A7>",
+    "startDate": 20110718,
+    "startDateRE": 20100000
+  },
+  {
+    "desc": "Total in Cash Shop [zh-TW CP950; shortened to fit]",
+    "find": "<54 6F 74 61 6C 20 3A 20 25 64 20 C4 B3 BD C3>",
+    "replace": "<C1 60 AD 70 A1 47 25 64 20 43 61 73 68>"
+  },
+  {
+    "desc": "Pet Evolution item amount [zh-TW CP950]",
+    "find": "<25 64 B0 B3 00>",
+    "replace": "<25 64 AD D3>",
+    "startDate": 20141020
+  },
+  {
+    "desc": "Tip box - Part 2 [zh-TW CP950]",
+    "find": "<B4 DD B1 E2>",
+    "replace": "<C2 F7 B6 7D>"
+  },
+  {
+    "desc": "Equipment - Dismount Cart [zh-TW CP950]",
+    "find": "<C4 AB C6 AE 20 C7 D8 C1 A6>",
+    "replace": "<A8 F8 A4 55 A4 E2 B1 C0 A8 AE>",
+    "startDate": 20190904
+  },
+  {
+    "desc": "No Color [zh-TW CP950]",
+    "find": "<BF B0 BB F6 C1 A6 B0 C5>",
+    "replace": "<B5 4C A6 E2>",
+    "startDate": 20211100
+  },
+  {
+    "desc": "Rune Tablet - Rune List [zh-TW CP950]",
+    "find": "<25 73 C0 C7 20 B7 E9 20 C1 B6 B0 A2>",
+    "replace": "<25 73 AA BA B2 C5 A4 E5>",
+    "startDate": 20230802
+  }
+]
